@@ -1,0 +1,40 @@
+//Name: Matthew Stevens
+//UIN: 924000693
+//CSCE 420
+//Due: May 1, 2018
+//hw4pr4.txt
+
+a. Nearest distance is 16 meters, what is the largest disparity (in pixels)?
+distance from cameras midpoint to object, z = 16m
+width of sensor, w = 10 cm
+distance between cameras, b = 1
+focal length = 16cm
+distance from y = 0 to sensor within camera = .5cm
+disparity = ((2*pixels)/width of sensor in cm) * (distance between sensors and focal lense)/(distance between sensors in cm) * (distance from y = 0 to camera lense / distance from cameras to objects in meters)
+
+disparity = ((2*512)/ 10)*(16/1)*(.5/16)
+disparity =  51.2 => 51 pixels
+
+b. What is the distance resolution at 16 meters, due to the pixel spacing?
+From the disparity from a,
+disparity a = 51 pixels
+disparity b = 52 pixels
+
+51 = ((2*pixels)/width of sensor in cm) * (distance between sensors and focal lense)/(distance between sensors in cm) * (distance from y = 0 to camera lense / distance from cameras to objects in meters)
+
+51 = ((2*512))/10) * (Z)/(1)*(.5/16)
+Z = 15.9375
+
+52 = ((2*pixels)/width of sensor in cm) * (distance between sensors and focal lense)/(distance between sensors in cm) * (distance from y = 0 to camera lense / distance from cameras to objects in meters)
+
+52 = ((2*512))/10) * (Y)/(1)*(.5/16)
+Y = 16.25
+
+Resolution = |Y - Z| = 16.25 - 15.9375 = .3125m = 31.25 cm
+
+c. What distance corresponds to a disparity of one pixel?
+
+1 pixel = ((2*pixels)/width of sensor in cm) * (distance between sensors and focal lense)/(distance between sensors in cm) * (distance from y = 0 to camera lense / distance from cameras to objects in meters)
+
+1 pixel = ((2*512pixels)/10cm) * (16m) / (1m) * (.5/z)
+z = 819.2m
